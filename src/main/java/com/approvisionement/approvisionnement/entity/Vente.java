@@ -2,10 +2,9 @@ package com.approvisionement.approvisionnement.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Builder
@@ -24,6 +23,9 @@ public class Vente extends AbstractEntity{
 
     @Column(name="commentaire")
     private String commentaire;
+
+    @OneToMany(mappedBy = "vente")
+    private List<LigneVente> ligneVenteList;
 
     @Column(name = "identreprise")
     private Integer idEntreprise;

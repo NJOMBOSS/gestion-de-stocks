@@ -1,10 +1,13 @@
 package com.approvisionement.approvisionnement.dto;
 
+import com.approvisionement.approvisionnement.entity.LigneVente;
 import com.approvisionement.approvisionnement.entity.Vente;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.persistence.OneToMany;
 import java.util.Date;
+import java.util.List;
 
 
 @Data
@@ -19,7 +22,10 @@ public class VenteDto {
 
     private String commentaire;
 
-      public VenteDto formEntity(Vente vente){
+
+    private List<LigneVenteDto> ligneVenteDtoList;
+
+      public static VenteDto fromEntity(Vente vente){
           if(vente == null){
               return null;
           }
@@ -31,7 +37,7 @@ public class VenteDto {
                   .build();
       }
 
-      public Vente toEntity(VenteDto venteDto){
+      public static Vente toEntity(VenteDto venteDto){
           if(venteDto == null){
               return null;
           }

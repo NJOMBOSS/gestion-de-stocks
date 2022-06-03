@@ -16,6 +16,9 @@ public class LigneVenteDto {
     @JsonIgnore
     private VenteDto venteDto;
 
+    @JsonIgnore
+    private ArticleDto articleDto;
+
     private BigDecimal quantite;
 
     private BigDecimal prixunitaire;
