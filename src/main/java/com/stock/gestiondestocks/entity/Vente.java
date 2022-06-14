@@ -1,5 +1,6 @@
 package com.stock.gestiondestocks.entity;
 
+
 import lombok.*;
 
 import javax.persistence.Column;

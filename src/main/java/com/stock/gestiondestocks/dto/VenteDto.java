@@ -1,5 +1,6 @@
 package com.stock.gestiondestocks.dto;
 
+
 import com.stock.gestiondestocks.entity.Vente;
 import lombok.Builder;
 import lombok.Data;
