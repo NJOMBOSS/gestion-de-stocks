@@ -10,7 +10,7 @@ public interface UtilisateurService {
 
     UtilisateurDto findById(Integer id);
 
-    UtilisateurDto findByCodeUtilisateur(String codeUtilisateur);
+    UtilisateurDto findByCode(String codeUtilisateur);
 
     List<UtilisateurDto> findAll();
 

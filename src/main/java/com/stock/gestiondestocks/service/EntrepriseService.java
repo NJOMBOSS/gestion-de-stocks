@@ -10,7 +10,7 @@ public interface EntrepriseService {
 
     EntrepriseDto findById(Integer id);
 
-    EntrepriseDto findByCodeEntreprise(String codeEntreprise);
+    EntrepriseDto findByCode(String codeEntreprise);
 
     List<EntrepriseDto> findAll();
 

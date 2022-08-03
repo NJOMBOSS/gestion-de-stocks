@@ -109,8 +109,8 @@ public class CommandeFournisseurServiceImpl implements CommandeFournisseurServic
                 );
     }
 
-    @Override
-    public CommandeFournisseurDto findByCodeCommandeClient(String codeCommandeFournisseur) {
+  /*  @Override
+    public CommandeFournisseurDto findByCode(String codeCommandeFournisseur) {
         if(!StringUtils.hasLength(codeCommandeFournisseur)) {
             log.error("Commande client CODE is null");
             return null;
@@ -122,7 +122,7 @@ public class CommandeFournisseurServiceImpl implements CommandeFournisseurServic
                         "Aucune commande fournisseur n'a ete trouve avec le CODE" + codeCommandeFournisseur,
                         ErrorCodes.COMMANDE_FOURNISSEUR_NOT_FOUND)
                 );
-    }
+    }*/
 
     @Override
     public List<CommandeFournisseurDto> findAll() {

@@ -54,21 +54,21 @@ public class ClientServiceImpl implements ClientService {
         );
     }
 
-    @Override
-    public ClientDto findByCodeClient(String codeClient) {
+   /* @Override
+    public ClientDto findByCode(String codeClient) {
         if(!StringUtils.hasLength(codeClient)) {
             log.error("Client CODE is null");
             return null;
         }
 
-        Optional<Client> client = clientRepository.findClientByCodeClient(codeClient);
+        Optional<Client> client = clientRepository.findClientByCode(codeClient);
 
         return Optional.of(ClientDto.fromEntity(client.get())).orElseThrow(()->
                 new EntityNotFoundException(
                         "Aucun client avec le CODE = " + codeClient + "n'a ete trouve dans la BDD",
                         ErrorCodes.CLIENT_NOT_FOUND)
         );
-    }
+    }*/
 
     @Override
     public List<ClientDto> findAll() {

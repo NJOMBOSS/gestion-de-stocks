@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface EntrepriseRepository extends JpaRepository<Entreprise, Integer> {
-    Optional<Entreprise> findEntrepriseByCodeEntreprise(String codeEntreprise);
+    Optional<Entreprise> findEntrepriseByCode(String codeEntreprise);
 }

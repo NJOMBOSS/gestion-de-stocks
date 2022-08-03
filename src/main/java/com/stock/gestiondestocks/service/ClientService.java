@@ -12,7 +12,7 @@ public interface ClientService {
 
     ClientDto  findById(Integer id);
 
-    ClientDto findByCodeClient(String codeClient);
+    //ClientDto findByCode(String codeClient);
 
     List<ClientDto > findAll();
 

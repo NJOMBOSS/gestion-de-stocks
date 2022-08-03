@@ -1,6 +1,5 @@
 package com.stock.gestiondestocks.service;
 
-
 import com.stock.gestiondestocks.dto.CategoryDto;
 
 import java.util.List;
@@ -16,5 +15,4 @@ public interface CategoryService {
     List< CategoryDto > findAll();
 
     void delete(Integer id);
-
 }

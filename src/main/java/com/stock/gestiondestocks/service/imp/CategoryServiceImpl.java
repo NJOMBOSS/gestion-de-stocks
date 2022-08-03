@@ -1,6 +1,5 @@
 package com.stock.gestiondestocks.service.imp;
 
-
 import com.stock.gestiondestocks.dto.CategoryDto;
 import com.stock.gestiondestocks.entity.Category;
 import com.stock.gestiondestocks.exeception.EntityNotFoundException;
@@ -10,6 +9,7 @@ import com.stock.gestiondestocks.repository.CategoryRepository;
 import com.stock.gestiondestocks.service.CategoryService;
 import com.stock.gestiondestocks.validator.CategoryValidator;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -28,7 +28,6 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
-
     @Override
     public CategoryDto save(CategoryDto categoryDto) {
         List<String> errors = CategoryValidator.validate(categoryDto);
@@ -61,12 +60,12 @@ public class CategoryServiceImpl implements CategoryService {
             log.error("Category CODE is null");
             return null;
         }
-        return categoryRepository.findCategoryByCodeCategory(codeCategory)
+        return categoryRepository.findCategoryByCode(codeCategory)
                 .map(CategoryDto::fromEntity)
                 .orElseThrow(()-> new EntityNotFoundException(
                         "Aucune categorie avec le CODE = " + codeCategory + "n'a ete dans la BDD",
-                ErrorCodes.CATEGORY_NOT_FOUND)
-        );
+                        ErrorCodes.CATEGORY_NOT_FOUND)
+                );
     }
 
     @Override
@@ -84,5 +83,4 @@ public class CategoryServiceImpl implements CategoryService {
         }
         categoryRepository.deleteById(id);
     }
-
 }

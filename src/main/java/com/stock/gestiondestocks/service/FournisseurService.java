@@ -10,7 +10,7 @@ public interface FournisseurService {
 
     FournisseurDto findById(Integer id);
 
-    FournisseurDto findByCodeFournisseur(String codeFournisseur);
+  //  FournisseurDto findByCode(String codeFournisseur);
 
     List<FournisseurDto> findAll();
 

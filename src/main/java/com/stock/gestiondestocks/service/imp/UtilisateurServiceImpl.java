@@ -58,13 +58,13 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
     @Override
-    public UtilisateurDto findByCodeUtilisateur(String codeUtilisateur) {
+    public UtilisateurDto findByCode(String codeUtilisateur) {
         if(!StringUtils.hasLength(codeUtilisateur)) {
             log.error("Utilisateur CODE is null");
             return null;
         }
 
-        Optional<Utilisateur> utilisateur = utilisateurRepository.findUtilisateurByCodeUtilisateur(codeUtilisateur);
+        Optional<Utilisateur> utilisateur = utilisateurRepository.findUtilisateurByCode(codeUtilisateur);
 
         return Optional.of(UtilisateurDto.fromEntity(utilisateur.get())).orElseThrow(()->
                 new EntityNotFoundException(

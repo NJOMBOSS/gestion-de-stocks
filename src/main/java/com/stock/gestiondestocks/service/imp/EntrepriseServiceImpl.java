@@ -57,13 +57,13 @@ public class EntrepriseServiceImpl implements EntrepriseService {
     }
 
         @Override
-    public EntrepriseDto findByCodeEntreprise(String codeEntreprise){
+    public EntrepriseDto findByCode(String codeEntreprise){
             if(!StringUtils.hasLength(codeEntreprise)) {
                 log.error("Entreprise CODE is null");
                 return null;
             }
 
-            Optional<Entreprise> entreprise = entrepriseRepository.findEntrepriseByCodeEntreprise(codeEntreprise);
+            Optional<Entreprise> entreprise = entrepriseRepository.findEntrepriseByCode(codeEntreprise);
 
             return Optional.of(EntrepriseDto.fromEntity(entreprise.get())).orElseThrow(()->
                     new EntityNotFoundException(

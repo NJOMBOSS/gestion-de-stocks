@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Integer> {
 
-    Optional<Client> findClientByCodeClient(String codeClient);
+   // Optional<Client> findClientByCode(String codeClient);
 }

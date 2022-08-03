@@ -56,14 +56,14 @@ public class FounisseurImpl implements FournisseurService {
         );
     }
 
-    @Override
-    public FournisseurDto findByCodeFournisseur(String codeFournisseur) {
+    /*@Override
+    public FournisseurDto findByCode(String codeFournisseur) {
         if(!StringUtils.hasLength(codeFournisseur)) {
             log.error("Article CODE is null");
             return null;
         }
 
-        Optional<Fournisseur> fournisseur = fournisseurRepository.findFournisseurByCodeFournisseur(codeFournisseur);
+        Optional<Fournisseur> fournisseur = fournisseurRepository.findFournisseurByCode(codeFournisseur);
 
         return Optional.of(FournisseurDto.fromEntity(fournisseur.get())).orElseThrow(()->
                 new EntityNotFoundException(
@@ -71,7 +71,7 @@ public class FounisseurImpl implements FournisseurService {
                         ErrorCodes.FOUNISSEUR_NOT_FOUND)
         );
     }
-
+*/
     @Override
     public List<FournisseurDto> findAll() {
         return fournisseurRepository.findAll().stream()
